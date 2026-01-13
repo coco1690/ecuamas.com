@@ -1,0 +1,25 @@
+
+
+interface Props {
+    subtitle?: string
+}
+export const CustomLogo = ({ subtitle = 'mas' }: Props) => {
+  return (
+    
+        <div className="flex items-center gap-2">
+            <div className="flex flex-col leading-none">
+                <div className="flex items-baseline">
+                    <span className="font-montserrat font-bold text-[25px] text-amber-400 transition-colors group-hover:text-yellow-300">
+                        Ecua
+                    </span>
+                    <span className="font-montserrat font-bold text-[25px] text-amber-400 transition-colors group-hover:text-yellow-300">
+                        {subtitle}
+                    </span>
+                </div>
+                <span className="font-montserrat font-bold text-[20px] text-amber-400 text-right -mt-1 transition-colors group-hover:text-yellow-300">
+                    .com
+                </span>
+            </div>
+        </div>  
+  )
+}

@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(0.35 0.15 264);
+  --color-primary-foreground: oklch(0.98 0.01 264);
+  --color-secondary: oklch(0.96 0.01 264);
+  --color-secondary-foreground: oklch(0.35 0.15 264);
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.15 0.02 264);
+  --color-muted: oklch(0.96 0.01 264);
+  --color-muted-foreground: oklch(0.55 0.015 264);
+  --color-accent: oklch(0.96 0.01 264);
+  --color-accent-foreground: oklch(0.35 0.15 264);
+  --color-border: oklch(0.92 0.01 264);
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes shine-delayed {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes sparkle {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+
+  @keyframes bounce-x {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(4px);
+    }
+  }
+
+  @keyframes float-1 {
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float-2 {
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: translateY(-16px);
+    }
+  }
+
+  @keyframes pulse-subtle {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 20px 5px rgba(251, 191, 36, 0.2);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-shine {
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  .animate-shine-delayed {
+    animation: shine-delayed 3s ease-in-out 1.5s infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-x {
+    animation: bounce-x 2s ease-in-out infinite;
+  }
+
+  .animate-float-1 {
+    animation: float-1 3s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float-2 3s ease-in-out 1s infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+}
+
+@theme {
+  --font-montserrat: "Montserrat Alternates", sans-serif;
+}
+
+/* Estilos personalizados para Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fbbf24 !important;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fbbf24 !important;
+  width: 32px !important;
+  border-radius: 4px !important;
+}
+
+@media (max-width: 768px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Estilos para el carrusel de partners */
+.partners-swiper {
+  overflow: visible !important;
+}
+
+.partners-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+/* Prevenir scroll automático al inicio */
+html {
+  scroll-behavior: auto !important;
+}
