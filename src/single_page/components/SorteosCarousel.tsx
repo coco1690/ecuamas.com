@@ -106,9 +106,9 @@ export const SorteosCarousel = () => {
 
               {/* Badge de clic */}
               <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-amber-400 text-gray-900 font-bold rounded-full shadow-2xl animate-pulse">
-                  <MousePointerClick className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                  <span className="text-xs sm:text-sm md:text-base">Haz clic aquí para participar</span>
+                <div className="flex items-center gap-1 px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 bg-amber-400 text-gray-900 font-bold rounded-full shadow-2xl animate-pulse">
+                  <MousePointerClick className="w-2.5 h-2.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <span className="text-[10px] sm:text-sm md:text-base">Haz clic para participar</span>
                 </div>
               </div>
             </div>

@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CustomLogo } from '@/components/custom/CustomLogo';
+import { SocialLinks } from '@/components/custom/SocialLinks';
 import { Link, useLocation } from "react-router";
+
 const navItems = [
   { label: 'Inicio', path: '/' },
   { label: 'Quiénes Somos', path: '/quienes-somos' },
@@ -37,35 +39,40 @@ export const CustomHeader = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center group">
               <div className="transform transition-transform duration-300 group-hover:scale-105">
-                <CustomLogo/>
+                <CustomLogo />
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
-                
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={cn(
-                      "relative px-4 py-2 rounded-lg font-medium transition-all duration-300",
-                      "hover:bg-gray-800/50",
-                      isActive
-                        ? "text-amber-400"
-                        : "text-gray-300 hover:text-white"
-                    )}
-                  >
-                    {item.label}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-amber-400 rounded-full" />
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
+            {/* Desktop Navigation + Social Links */}
+            <div className="hidden md:flex items-center gap-6">
+              <nav className="flex items-center gap-1">
+                {navItems.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={cn(
+                        "relative px-4 py-2 rounded-lg font-medium transition-all duration-300",
+                        "hover:bg-gray-800/50",
+                        isActive
+                          ? "text-amber-400"
+                          : "text-gray-300 hover:text-white"
+                      )}
+                    >
+                      {item.label}
+                      {isActive && (
+                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-amber-400 rounded-full" />
+                      )}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              {/* Social Links - Desktop */}
+              <SocialLinks iconSize="w-4 h-4" />
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -127,6 +134,14 @@ export const CustomHeader = () => {
                 </Link>
               );
             })}
+
+            {/* Social Links dentro del menú */}
+            <div className="pt-4 mt-4 border-t border-gray-800">
+              <p className="text-gray-400 text-sm mb-3 px-4">Síguenos</p>
+              <div className="flex justify-center">
+                <SocialLinks iconSize="w-5 h-5" />
+              </div>
+            </div>
           </nav>
         </div>
       </>
