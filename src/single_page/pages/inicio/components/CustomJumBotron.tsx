@@ -32,7 +32,7 @@
 // }
 
 import { RegisterButtons } from "@/single_page/components/RegisterButtons"
-import { MessageCircle, ArrowRight } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 
 export const CustomJumBotron = () => {
     const phoneNumber = "593989536961";
