@@ -30,19 +30,12 @@
 //         </>
 //     )
 // }
-
 import { RegisterButtons } from "@/single_page/components/RegisterButtons"
 import { MessageCircle } from "lucide-react"
+import { useWhatsApp } from "@/hooks/useWhatsApp"
 
 export const CustomJumBotron = () => {
-    const phoneNumber = "593989536961";
-    const message = "Hola! Necesito ayuda con recargas o pagos.";
-    
-    const handleWhatsAppClick = () => {
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-        window.open(whatsappUrl, '_blank');
-    };
+    const { openWhatsApp } = useWhatsApp();
 
     return (
         <>
@@ -62,8 +55,8 @@ export const CustomJumBotron = () => {
             <section className="py-4 sm:py-6 px-4">
                 <div className="container mx-auto max-w-3xl">
                     <div 
-                        onClick={handleWhatsAppClick}
-                        className="relative bg-linear-to-r from-green-500 to-green-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
+                        onClick={() => openWhatsApp()}
+                        className="relative bg-gradient-to-r from-green-500 to-green-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
                     >
                         {/* Efectos sutiles */}
                         <div className="absolute -right-6 -top-6 w-24 h-24 bg-white/10 rounded-full blur-2xl" />
@@ -101,7 +94,6 @@ export const CustomJumBotron = () => {
                                 <span className="text-white text-sm sm:text-base font-bold animate-pulse">
                                     👆 CLIC AQUÍ PARA CONTACTAR 👆
                                 </span>
-                                
                             </div>
                         </div>
                     </div>

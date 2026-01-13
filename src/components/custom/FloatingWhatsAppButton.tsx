@@ -1,17 +1,12 @@
+import { useWhatsApp } from "@/hooks/useWhatsApp";
+
 export const FloatingWhatsAppButton = () => {
-  const phoneNumber = "593989536961"; // Cambia por tu número real
-  const message = "Hola! Quiero que me ayudes con una recarga."; // Mensaje predeterminado
-  
-  const handleWhatsAppClick = () => {
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  const { openWhatsApp } = useWhatsApp();
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <button
-        onClick={handleWhatsAppClick}
+        onClick={() => openWhatsApp("Hola!vengo de ecuamas.com requiero mas informacion.")}
         className="group relative flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse"
         title="Contáctanos por WhatsApp"
       >
