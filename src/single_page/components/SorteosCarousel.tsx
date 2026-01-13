@@ -1,8 +1,8 @@
-
 import { useEffect } from 'react';
 import { useSorteosStore } from '@/store/useSorteosStore';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { MousePointerClick } from 'lucide-react';
 
 import 'swiper/swiper-bundle.css';
 
@@ -55,12 +55,12 @@ export const SorteosCarousel = () => {
         spaceBetween={0}
         slidesPerView={1}
         navigation
-        pagination={{ 
+        pagination={{
           clickable: true,
-          dynamicBullets: true 
+          dynamicBullets: true
         }}
-        autoplay={{ 
-          delay: 3000,
+        autoplay={{
+          delay: 5000,
           disableOnInteraction: false,
         }}
         loop={imagenes.length > 1}
@@ -103,6 +103,14 @@ export const SorteosCarousel = () => {
                   {index + 1} / {imagenes.length}
                 </div>
               )}
+
+              {/* Badge de clic */}
+              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-amber-400 text-gray-900 font-bold rounded-full shadow-2xl animate-pulse">
+                  <MousePointerClick className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <span className="text-xs sm:text-sm md:text-base">Haz clic aquí para participar</span>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
