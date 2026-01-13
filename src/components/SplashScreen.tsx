@@ -20,7 +20,7 @@ export const SplashScreen = ({ onFinish }: SplashScreenProps) => {
 
                 {/* Logo con animación - responsive */}
                 <div className="scale-100 sm:scale-125 md:scale-150 transition-all duration-700 ease-out animate-[scale-in_0.7s_ease-out]">
-                    <CustomLogo subtitle="mas" />
+                    <CustomLogo  />
                 </div>
 
                 {/* Texto descriptivo */}

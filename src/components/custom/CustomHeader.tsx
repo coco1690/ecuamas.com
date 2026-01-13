@@ -37,7 +37,7 @@ export const CustomHeader = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center group">
               <div className="transform transition-transform duration-300 group-hover:scale-105">
-                <CustomLogo subtitle="mas" />
+                <CustomLogo/>
               </div>
             </Link>
 

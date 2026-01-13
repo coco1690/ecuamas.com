@@ -1,6 +1,6 @@
 export const FloatingWhatsAppButton = () => {
   const phoneNumber = "593989536961"; // Cambia por tu número real
-  const message = "Hola! Quiero que me ayudes a crear una cuenta ecuabet o doradobet."; // Mensaje predeterminado
+  const message = "Hola! Quiero que me ayudes con una recarga."; // Mensaje predeterminado
   
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);
